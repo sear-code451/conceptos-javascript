@@ -20,7 +20,7 @@
 
 **Syntax Parser:** Es un tipo de interprete automático en javascript ejemplo:
 
-~~~~
+~~~
     function hola() {
         let como = 'comida';
     }
