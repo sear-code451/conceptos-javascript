@@ -1,0 +1,13 @@
+        Number (convertidor de string a Number)
+
+simplemente lo que hace es que si tenemos un valor de numero en string podemos convertirlos a numero ejemplo:
+
+let numeroString1 = "10";
+let numeroString2 = "20";
+let numeroString3 = "30";
+
+let sumaNumeros = Number(numeroString1) + Number(numeroString2) + Number(numeroString3);
+
+let resultado = "El resultado es: " + sumaNumeros;
+
+console.log(resultado);

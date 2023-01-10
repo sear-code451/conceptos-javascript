@@ -1,0 +1,85 @@
+            THIS (éste,esta,esto)
+
+no se explicar con ejemplos:
+
+entender entre las diferencias de contexto y contexto de ejecución en como afecta a this:
+
+CONTEXTO: tiene que ver con el valor de this el objeto que esta ejecutando una función en un momento específico.
+
+CONTEXTO DE EJECUCION: bueno esto tiene que ver mas sobre las pilas de ejecución lo que aprendimos en exection-stack.
+
+TIPOS DE BINDING (vinculante):
+
+1. Lexical binding (Arrow functions).
+2. New Binding (Instanciar Objetos).
+3. Explicit Binding (Invocación indirecta).
+4. Implicit Binding (Invocación de método).
+5. Default Binding (Invocacion directa).
+
+        DEFAULT  BINDING (enlace predeterminado):
+
+´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
+
+function quiensoy(){
+    console.log('Hola, yo soy:', this);
+}
+
+quiensoy(); // undefined o te saldra global.
+
+´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
+
+esa función de arriba va dar undefined o te manda a window osea al objeto global de todo.
+
+
+        IMPLICIT BINDING (enlace implícito):
+
+Se produce cuando invocamos al método de un objeto.
+ejemplo:
+
+´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
+
+const sasha = {
+    nombre: 'sasha',
+
+    saludar: function (){
+        console.log('hola, me llamo ' + this.nombre );
+    },
+
+    hermano:{
+        nombre: 'Eric',
+        saludar: function (){
+            console.log('yo el hermano, me llamo ' + this.nombre);
+        }
+    }
+}
+
+sasha.saludar();
+sasha.hermano.saludar();
+
+´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
+
+            Explicit Binding (enlace explícito)
+
+Sirve par que nosotro elijamos exáctamente que objeto queremos que sea this cuando se ejecuta la función.
+
+´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
+
+const sasha = {
+    nombre: 'Sasha',
+    saludar: function (gritando, conDespedida){
+        const saludoNormal = 'Hola , me llamo ' + this.nombre;
+        const despedidaNormal = 'Chau';
+
+        const saludo = gritando ?
+            saludoNormal.toUpperCase() : saludoNormal;
+
+        const despedida = gritando ?
+            despedidaNormal.toUpperCase() : despedidaNormal;
+        
+        console.log(saludo);
+
+        if (conDespedida){
+            console.log(despedida);
+        }
+    }
+}

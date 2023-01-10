@@ -1,0 +1,21 @@
+            diferencias entre parámetros y argumentos:
+
+link de explicación concreta y corta: https://www.youtube.com/watch?v=Z7pwLrNGbjo
+
+Bueno los parámetros son los que sirven para pasar valores que serán utilizados por el código de una función.
+
+Los argumentos son los valores que le envío a los parámetros.
+
+EJEMPLO CLARO:
+
+´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
+
+function suma(a,b){     // LOS DE ACA SON PARAMETROS.
+    return a + b;
+}
+
+suma( 3, 4 );           // LOS DE ACA SON ARGUMENTOS.
+
+´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
+
+El de abajo son argumentos el porque es debido a que cuando ya tenemos una función definida y queremos invocar dicha función ya aca se le pasa los valores o mejor dicho se le pasa los argumentos a dichos parámetros.

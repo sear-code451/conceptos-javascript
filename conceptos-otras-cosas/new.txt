@@ -1,0 +1,17 @@
+            NEW (se usa para la clase constructora)
+
+Bueno al momento que escribimos new javascript lo que hace es que nos crea un objeto vacío.
+
+ejemplo:
+
+function Persona(nombre){
+    //this = { nombre: 'Sacha' };    invoca a la función constructora con this apuntando al objeto de abajo
+
+    this.nombre = nombre;
+
+    //  lo ultimo que hace new es que retorno this
+    // return this
+}
+
+
+const sacha = new persona ('Sacha');    // { nombre: 'Sacha' }

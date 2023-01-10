@@ -1,0 +1,3 @@
+        INSTANCIA
+
+Conocemos como instancia a un objeto que es creado a partir de una clase.

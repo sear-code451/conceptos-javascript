@@ -1,0 +1,9 @@
+            CLASES DE INSPECCIONES TECNICAS DE VEHICULOS
+
+
+- Voluntarias.
+
+- Periodicas, en funcion del tipo de vehiculo, servicio que presta y antiguedad del mismo.
+
+-Por reformas de importancia, por ejemplo instalar un enganche para remolques.
+    haber afectado a los sistema de direccion, suspension, tranmision o frenado, o al bastidor o estructura autoportante.

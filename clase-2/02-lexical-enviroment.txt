@@ -1,0 +1,26 @@
+    
+    LEXICAL-ENVIROMENT (entorno léxico)
+
+Hace como un tipo de listado de todo lo que nosotros declaremos ejemplo:
+
+function hola(){
+    var foo = 'hello!';
+}
+
+var sec = 'como estás?';
+
+``````
+
+Lo que hace lexical es que hace que tenga una lista de todo lo que hemos declarado ej:
+
+´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
+    Listado lexical-enviroment:
+
+        var foo;
+        var sec;
+        hola();
+
+(tenemos declarado 2 variables foo, sec, tambien una function llamado "hola") es una lista de orden de ejecución.
+
+´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
+

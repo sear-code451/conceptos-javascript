@@ -1,0 +1,37 @@
+    función flecha (arrow function)
+
+1. PRIMERA DIFERENCIA: Bueno primero que nada para darle un nombre a la funcion normalmente se le coloca el nombre a la funcion... pero en arrow function se le declara con una variable el nombre. EJEMPLO:
+
+FUNCTION NORMAL:
+
+function nombreDeLaFuncion(parametro1 , parametro2) {
+    return 'hola';
+}
+
+ARROW FUNCTION:
+
+let NombreDeLaFuncion2 = (parametro1, parametro2) => { return 'hola};
+
+
+´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
+
+2. SEGUNDA DIFERENCIA: los parámetros se los anote de la misma manera excepto cuando solo hay un parámetro EJEMPLO:
+
+function saludo(parametro1) {
+    return a * b;
+}
+
+let saludo2 = parametro1 => { return a * b };
+
+´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
+
+3. TERCERA DIFERENCIA: se puede tambien cortar el resutado es una manera facil de ahorrar codigo siempre. ejemplo:
+
+function saludo3(parametro1) {
+    return a * b;
+}
+
+let saludo4 = parametro1 => a * b;
+
+
+

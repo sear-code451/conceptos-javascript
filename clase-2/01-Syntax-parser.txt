@@ -1,0 +1,17 @@
+
+    SINTAX-PARSER
+
+Es un tipo de interprete automático en Javascript ejemplo:
+
+    function hola(){ 
+        let como = 'comida';
+    }
+
+aca el código esta todo bien escrito. un ejemplo de sintax-parser es así:
+
+    functionz hola(){           ... Sintax Error (aca está mal escrito )
+        lets como = 'comida';   ... Sintax Error (esta mal escrito) 
+    }
+otro ejemplo es que tambien es el que traduce de forma automática nuestro codigo al lenguaje de máquina.
+
+

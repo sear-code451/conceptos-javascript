@@ -1,0 +1,3 @@
+        BUENO DEJARE UN ENLACE DE LOS METODOS DE BUSQUEDA DENTRO DE LOS ARRAYS:
+
+        https://www.freecodecamp.org/espanol/news/cuatro-maneras-diferentes-de-buscar/#:~:text=Estos%20m%C3%A9todos%20son%3A%201%20Filter%20%28%20filtro%29%202,Includes%20%28%20incluye%29%204%20IndexOf%20%28%20%C3%ADndice%20de%29

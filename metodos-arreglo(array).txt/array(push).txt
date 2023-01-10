@@ -1,0 +1,14 @@
+                METODO DE ARRAY ( .push() )
+
+
+    array.push('primer contenido', 'segundo contenido e igual tambien agrega numbers', 3);
+
+    * Bueno se agrega contenido al final del arreglo; ejemplo:
+    
+let frutas = ['manzana', 'pera', 'orange'];
+
+frutas.push('banana', 'pineapple')
+
+console.log(frutas);
+
+    

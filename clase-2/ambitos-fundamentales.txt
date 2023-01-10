@@ -1,0 +1,17 @@
+    ÁMBITOS FUNDAMENTALES:
+
+son 3 maneras fundamentales que tiene:
+
+- Ámbito o contexto global: es el de todo el programa y suele estar delimitado por el archivo en el que se encuentra el código.
+
+- Ámbito o contexto de función: definido por el cuerpo de la función.
+
+- Ámbito o contexto de bloque: definido por la estructura contenedora; por ejemplo, un ciclo " for " o una estructura " if-else ".
+
+RESUMEN:
+
+- El global es el de todo el programa cuando no esta dentro de ninguna función u otra cosa estamos en el global; para entender mejor es que estamos en el contexto de ejecución global aplicando con su lexical-enviroment.
+
+- el contexto de función fácil tal como dice es lo que está dentro de la función y bueno aplicamos su lexical-enviroment que tenemos dentro de la función.
+
+- El contexto de bloque son los ciclos para ser, osea, los ciclos son los contexto de bloque y tal vez otras cosas mas.

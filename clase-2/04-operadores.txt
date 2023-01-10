@@ -1,0 +1,18 @@
+            OPERADORES:
+
+bueno los operadores obviamente son suma,resta,multiplicación y los demás pero bueno no son mas que funciones los operadores tenemos que verlos como funciones.
+
+EJEMPLO DE PORQUE SON FUNCIONES:
+
+´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
+var a = 2 + 3;
+
+function suma(a, b){
+    return a + b;
+}
+
+var a = sumar(2,3);
+
+´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
+
+OJO: TRATAR DE ENTENDER PORQUE VERLOS COMO FUNCIONES YA QUE SI ENTENDEMOS COMO TRABAJA O FUNCIONA EL LENGUAJE TODO SE VUELVE YA MAS COMPRENSIBLE A LA HORA DE USAR.

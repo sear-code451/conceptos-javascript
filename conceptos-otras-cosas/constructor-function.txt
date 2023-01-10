@@ -1,0 +1,20 @@
+        CONSTRUTOR FUNCTION (funcion constructora)
+
+Nos permiten re-utilizar el código de inicialización de una instancia cada vez que queramos crear una nueva.
+
+Ahora si tenemos una función constructora es MUY IMPORTANTE que siempre inicie con new.
+
+ejemplo:
+
+´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
+
+function Persona(nombre){
+        this.nombre = nombre;
+}
+
+Persona.prototype;
+//lo que hace le asigna es esto: Persona.prototype = {};      
+
+const sacha = new persona ('Sacha');  //{__proto__: Persona.prototype}
+const eric = new persona ('Eric');
+const vicky = new persona ('Vicky');

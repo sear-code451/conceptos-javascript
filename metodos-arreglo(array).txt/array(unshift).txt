@@ -1,0 +1,12 @@
+            MÉTODO ARRAY ( .unshift() )
+
+
+    array.unshift('primer elemento', 'segundo, etc');
+
+    * Se agrega elementos al inicio del array. ejemplo:
+
+    let frutas = ['manzana', 'pera', 'orange'];
+
+    frutas.unshift('banana', 'pineapple')
+
+    console.log(frutas);

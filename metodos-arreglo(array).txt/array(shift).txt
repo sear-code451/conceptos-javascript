@@ -1,0 +1,11 @@
+        MÉTODO ARRAY ( .shift() )
+
+    array.unshift('primer elemento', 'segundo, etc');
+
+    * Se elimina elementos al inicio del array. ejemplo:
+
+    let frutas = ['manzana', 'pera', 'orange'];
+
+    frutas.shift('banana', 'pineapple')
+
+    console.log(frutas);

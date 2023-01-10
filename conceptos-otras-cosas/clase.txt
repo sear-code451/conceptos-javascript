@@ -1,0 +1,32 @@
+            CLASE
+
+Una clase en programación es como un molde que define que propiedades y métodos van a compartir en grupo de objetos.
+
+EJEMPLO:
+
+
+const sacha = {
+    nombre: 'Sacha',
+    saludar: function() {
+        console.log('Hola mi nombre es ' + this.nombre);
+    }
+};
+
+const eric = {
+    nombre: 'Eric',
+    saludar: function (){
+        console.log('Hola, mi nombre es ' + this.nombre);
+    }
+};
+
+const vicky = {
+    nombre: 'Vicky';
+    saludar: function() {
+        console.log('Hola, mi nombre es ' + this.nombre);
+    }
+};
+
+
+function Persona(nombre) {  //Persona es nombre de función contructora
+    
+}

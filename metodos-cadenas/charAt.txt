@@ -1,0 +1,14 @@
+
+        charAt()  (trazar en)
+
+Esto es un método de cadena cosa que cuando usamos esto nos da el valor de de donde nosotros le demos la posición ejemplo:
+
+var saludar = 'hello';
+
+saludar.charAt();       // imprimira: h
+
+cuando no colocamos nada; esto da como predeterminado 0.
+Tambien cuando nos pasamos o le damos una posición en el que no existe esto solo dara un arreglo vacío.
+
+saludar.charAt(30)      // ""
+saluddar.charAt(2)      // l

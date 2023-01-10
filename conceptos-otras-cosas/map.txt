@@ -1,0 +1,17 @@
+
+            METODO .MAP()
+
+
+Usamos map cuando tenemos un array y queremos obtener un nuevo array de otra cosa.
+
+EJEMPLO:
+
+´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
+
+const numeros = [ 3 , 10, 20, 50];
+const dobles = numeros.map(function(numero){
+    return numero * 2;
+});
+
+console.log(numeros);
+console.log(dobles);

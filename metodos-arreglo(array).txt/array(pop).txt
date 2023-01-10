@@ -1,0 +1,12 @@
+            MÉTODO ARRAY ( .pop() )
+
+
+    array.unshift('primer elemento', 'segundo, etc');
+
+    * Elimina elementos al final del array. ejemplo:
+
+    let frutas = ['manzana', 'pera', 'orange'];
+
+    frutas.pop('banana', 'pineapple')
+
+    console.log(frutas);

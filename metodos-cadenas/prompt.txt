@@ -1,0 +1,16 @@
+        prompt()    (indicador)
+
+lo que hace esto es que te envia como una ventana externa o algo asi solo ver el ejemplo y ya sacar conclusiones con eso:
+
+´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
+let edad;
+
+edad = prompt("Introduce tu edad");
+
+if (edad >= 18){
+	alert("Puedes entrar, eres mayor de edad.");
+} else {
+	alert("No puedes entrar, eres menor de edad.");
+}
+
+´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´

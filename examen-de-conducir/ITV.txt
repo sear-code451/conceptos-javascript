@@ -1,0 +1,20 @@
+            ITV (Inspeccion tecnica periodica de vehiculos)
+
+La antiguedad de un vehiculo de motor comienza a contar desde la fecha de su primera matriculacion.
+    Esto se tien en cuenta a la hora de saber cuando se debe realizar la primera inspeccion tecnica periodica de vehiculos (ITV).
+
+La inspeccion tecnica periodica de motocicletas, vehiculos de tres ruedas, cuadriciclos quads, ciclomotores de tres ruedas cuadriciclos ligeros se hara con la sgte frecuencia segun su antiguedad:
+
+    - Hasta 4 años: exento.
+    - De mas de 4 años: bienal, es decir, cada 2 años.
+
+NOTA: para que se entienda mejor los primeros 4 años sos libre despues de esos cuatros años ya viene ser cada 2 años.
+
+
+¿ A QUE ESTA OBLIGADO SI EL RESULTADO DE LA INSPECCION ITV ES FAVORABLE ?
+
+Documentacion relacionada con la ITV que debe llevarse en el vehiculo:
+
+    - ULTIMO INFORME de inspeccion de ITV.
+    - DISTINTIVO indicando el mes y el año de la sgte ITV. si el vehiculo dispone de parabrisas, debe pegarse en su angulo superior derecho.
+

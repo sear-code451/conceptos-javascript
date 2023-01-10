@@ -1,0 +1,34 @@
+            Algoritmos
+
+Un algoritmo es un conjunto prescrito de instrucciones o reglas bien definidas.
+Ordenadas y finitas que permite realizar una actividad mediante pasos sucesivos que no generen dudas a quien deba realizar dicha actividad. O sea, una serie de pasos a seguir para completar una tarea.
+
+1. Resuelva un problema
+
+2. Debe ser comprensible
+
+3. Hacaerlo eficientemente
+
+COMO MEDIMOS LA EFICIENCIA DE UN ALGORTIMO:
+
+- Tiempo
+- Espacio
+- Otros recursos:
+
+    - Red
+    - Gráficos
+    -Hardware( Impresoras, Cpus, sensores, etc...)
+
+
+EJEMPLOS:
+
+´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
+
+let max = array[0];
+for( var i = 0; i <= array.length; i++ ) {
+    if( array[i] > max ) {
+        max = array[i];
+    }
+}
+
+console.log(max);
