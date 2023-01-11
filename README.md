@@ -18,7 +18,8 @@
 11. **Ejercicios this**
 12. **Scope ( alcance )**
 
-**Syntax Parser:** Es un tipo de interprete automático en javascript ejemplo:
+## Syntax Parser:
+  Es un tipo de interprete automático en javascript ejemplo:
 
 ~~~
     function hola() {
@@ -36,7 +37,8 @@ Acá el código esta todo bien escrito. Un ejemplo de sintax-parser sería lo sg
 
 Lo que hace es el que traduce de forma automática nuestro código al lenguaje de máquina, cosa que la máquina aca nos dice de forma automática donde esta nuestro error o en que estamos fallando.
 
-**Lexical Enviroment (Entorno Léxico):** Hace como un tipo de listado de todo lo que nosotros declaremos ejemplo:
+## Lexical Enviroment (En torno Léxico):
+  Hace como un tipo de listado de todo lo que nosotros declaremos ejemplo:
 
 ~~~
 function hola(){
