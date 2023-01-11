@@ -1,0 +1,5 @@
+    ATAJOS PARA VISUAL STUDIO CODE:
+
+
+Ctrl + Alt direccion = esto nos va dar multicursores para las lineas que demos con la dirección.
+Ctrl + shift + L = se podría decir que es una mezcla de lo de arriba con (ctrl + d).
