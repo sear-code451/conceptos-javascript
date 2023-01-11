@@ -2,7 +2,7 @@
 
 bueno realmente no se si ese es el titulo pero de lo que se trata esto es que creamos una nueva clase.
 
-Ahora esa clase para que tenga metódos debemos de hacerlo nosotros mismos desde cero...si tratamos de usar otros métodos que no sean del que no nosotros creamos no serán tomados en cuenta a la hora de usar esos metódos.
+Ahora esa clase para que tenga metódos debemos de hacerlo nosotros mismos desde cero...si tratamos de usar otros métodos que no sean del que nosotros creamos no serán tomados en cuenta a la hora de usar esos metódos.
 
 EJEMPLO:
 
