@@ -108,3 +108,72 @@ console.log(d);       // 'Pedro'
 >Los primeros ejemplo son lo normal cambia valor de uno pero no de los dos y tal como es aparece en (console.log) pero ya en los objetos cambia la cosa.
 
 >Ya que en los objetos no tiene cada variable sus espacios sino que apuntan a la misma referencia del valor del que se indicó.
+
+## Hoisting
+
+El hoisting es el primer ejemplo de las cosas extras que hace el interprete sin que se lo pidamos. Ejemplo:
+
+~~~
+bar();
+console.log(foo);
+
+var foo = 'Hola, me declaro';
+function bar(){
+    console.log('Soy una función');
+}
+~~~
+
+> Acá el ejemplo es que cuando hacemos algo hace de forma automática y en silencio java en que cuando usamos var copia en la parte de arriba la variable pero sin el valor dado.
+
+> **MUY IMPORTANTE:** Que es una declaración?... ejemplo:
+
+~~~
+var foo = ' hola ';
+~~~
+
+> foo **ES UNA DECLARACIÓN SOLAMENTE** foo solo eso es la variable que le hemos declarado como foo.
+
+## OPERADORES
+
+Bueno los operadores obviamente son suma, resta multiplicación y los demás pero bueno no son mas que funciones los operadores, tenemos que verlos como funciones.
+
+EJEMPLO DE PORQUE SON FUNCIONES:
+
+~~~
+var a = 2 + 3;
+
+function suma(a, b){
+    return a + b;
+}
+
+var a = sumar(2,3);
+~~~
+
+> **OJO:** tratar de entenderlo como funciones, porque verlos de esta manera vamos a poder entender como trabaja o hace la máquina o el lenguaje ya todo despúes se vuelve mas comprensible.
+
+
+## Execution context (contexto de ejecución)
+
+El contexto de ejecución contiene información sobre que código se está ejecutando en cada momento.
+Además de mantener el código que tiene que ejecutar, también mantiene más información sobre donde se invocó ese código, en que lexical enviroment está, etc. EJEMPLO:
+
+~~~
+function person(){          //  execution context
+    let first = 'Tony'; 
+    let last = 'Sanchez';
+
+function firstName(){       // execution context
+        return first;
+    }
+
+    function lastName(){    // execution context
+        return last;
+    }
+
+    alert( firstName() + '' + lastName() );
+}
+~~~
+
+> **IMPORTANTE:** El execution context es que se ejecuta siempre y cuanndo se lo llame o invoque si no se ejecuta su mismo nombre lo dice.
+
+> **OTRO DATO IMPORTANTE:** Lo primero que ejecuta son los objetos globales o tambien conocido contexto global.
