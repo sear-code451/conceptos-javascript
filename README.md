@@ -177,3 +177,347 @@ function firstName(){       // execution context
 > **IMPORTANTE:** El execution context es que se ejecuta siempre y cuanndo se lo llame o invoque si no se ejecuta su mismo nombre lo dice.
 
 > **OTRO DATO IMPORTANTE:** Lo primero que ejecuta son los objetos globales o tambien conocido contexto global.
+
+## Execution Stack ( Pila de ejecución )
+
+Lo que hace es que ordena en la manera que serán ejecutados los diferentes contexto de ejecución.
+
+Un ejemplo en la manera que lo ordena:
+
+~~~
+function b(){               TERCERO en la pila(primero en ser ejecutado);
+    console.log('soy b');
+};
+
+function a(){               SEGUNDO en la pila(segundo en ser ejecutado.
+    b();
+}
+
+a();                         PRIMERO en la pila (ultimo en ser ejecutado)
+~~~
+
+> La manera que lo ordena es de abajo hacia arriba una vez terminado de saber todos los contexto de ejecución, los va ejecutando de arriba hacia abajo.
+
+## CallBack (Devolver la Llamada)
+
+Es una función en la cual es utilizada como parámetro en otra   función. Ejemplo:
+
+~~~
+function mensaje(nombre){
+    console.log('Hola', nombre);
+}
+
+mensaje('Luis');
+~~~
+
+> IMPORTANTE: un parámetro son los valores que le damos a una función.
+
+OTRO EJEMPLO MAS COMPLETO PERO ES MAS COMPLETO PARA ENTENDER:
+
+~~~
+function saludo(){
+    console.log('estoy en el callback');
+}
+
+let fn = function(cb){
+    cb();
+
+    return function(){
+        console.log('estamos dentro de la función');
+    };
+}
+
+fn(saludo)();
+~~~
+
+## Coerción de datos
+
+Bueno es como que el valor se le puede dar según el dato que querrás convertirlo. Ejemplo:
+
+~~~
+number('3');  // esto se lo va poder convertir a 3 obviamente.
+
+number(false);  // esto lo va va convertir a 0.
+
+number(true);   // esto lo va convertir a 1.
+
+number(undefined);  // esto lo va convertir a Nan (not a number).
+
+number(null);   // esto lo convierte a un 0 el porque bueno así lo definió Javascript.
+~~~
+
+EJEMPLO EN EJERCICIO:
+
+~~~
+3 + '3' = 33    // lo está concatenando. lo convierte como que a string el numero.
+
+3 - '3' = 0     // simmplemente resta lo convierte a numero el string.
+
+3 - true = 2    // como dijimos si queremos convertirlo a numero el true entonces (true vale 1) mirar arriba para entenderlo mejor.
+
+3 - false = 3   // como dijimos (false vale 0) asi que es como decir (3 - 0).
+
+true + true = 2 // porque true son 1 en valor numerico asi que los convierte a numerico porque de forma booleana no tiene sentido.
+~~~
+
+## First class function
+
+Bueno podemos pasar funciones como argumentos también podemos guardar funciones en variables o también podemos devolver kuna función dentro de otra función.
+
+~~~
+let fn = function(){
+    return function() {
+        console.log('function devuelta');
+    };
+};
+
+let result = fn();
+
+result();
+~~~
+
+## THIS (éste, esta, esto)
+
+Bueno this es como que valor de otro lado puede ocupar... pero el this si no tiene un método quien lo guía como (objeto.bind), entonces sin esto que los indique el this busca al mas cercano de su mismo nivel o un nivel mas arriba, si no existe ya un nivel mas entonces en el global busca.
+
+EJEMPLO:
+
+~~~
+function quiensoy(){
+    console.log('Hola, yo soy:', this);
+}
+
+quiensoy(); // undefined o te saldra global.
+~~~
+
+OTRO EJEMPLO:
+
+~~~
+const sasha = {
+    nombre: 'sasha',
+
+    saludar: function (){
+        console.log('hola, me llamo ' + this.nombre );
+    },
+
+    hermano:{
+        nombre: 'Eric',
+        saludar: function (){
+            console.log('yo el hermano, me llamo ' + this.nombre);
+        }
+    }
+}
+
+sasha.saludar();
+sasha.hermano.saludar();
+~~~
+
+## EJEMPLOS MAS COMPLEJOS DE THIS:
+
+~~~
+const sasha = {
+    nombre: 'Sasha',
+    twitter: '@pablo',
+    saludar: function (){
+        function seguimeEnTwitter(){
+            console.log('Seguime en Twitter: ' + this.twitter);
+        }
+    
+
+        console.log('Hola, me llamo ' + this.nombre);
+        seguimeEnTwitter();
+    }
+
+}
+
+sasha.saludar();
+~~~
+
+> Este ejercicio está mal una parte debido a que no imprimirá twitter.
+
+>Para que salga bien se verá en el siguiente ejercicio.
+
+~~~
+const sasha = {
+    nombre: 'Pablo',
+    twitter: '@pablo',
+    saludar: function(){
+        console.log('Hola, me llamo ' + this.nombre);
+        this.seguimeEnTwitter();
+    },
+
+    seguimeEnTwitter: function(){
+        console.log('Seguime en Twitter: ' + this.twitter);
+    }
+
+}
+
+sasha.saludar();
+~~~
+
+## Scope (Alcance)
+
+Bueno el scope es hasta donde es nuestro alcance, o mejor dicho cual es nuestro conjunto de variable, objetos y funciones de cual tenemos acceso desde un determinado contexto de ejecución en el que estoy. EJEMPLO:
+
+~~~
+var global = 'Hola!';
+
+function a(){
+    console.log(global);
+    global = 'Hello';
+}
+
+function b (){
+    var global = 'Chau';
+    console.log(global);
+}
+
+a();
+b();
+console.log(global);
+~~~
+
+## CLOSURE (clausura, pronunciación: clousheer)
+
+Es como la combinación de la función de una función y del ambiente léxico donde esa función fue declarada.
+
+> Bueno en otras palabras es que una closures es una función que está dentro de otra función, ahora esta usa los valores que le dió en la función de adentro, a eso nosotros le declaramos que es una closure o lo identificamos que es una closures; mirar el ejemplo como usa el valor del parámetro la function que está dentro de él. Ahora si no usa los valores de la función en donde está dentro entonces no es una closures.
+
+EJEMPLO:
+
+~~~
+function saludar (saludo){
+    return function( nombre ) {
+        console.log( saludo + " "  + nombre );
+    }
+}
+
+var saludarHola = saludar('Hola');
+saludarHola('Toni');
+~~~
+
+OTRO EJEMPLO MÁS COMPLICADO (supuestamente):
+
+~~~
+var crearFunction = function() {
+    var arreglo = [];
+
+    for ( let i = 0; i < 3; i++ ) {
+        arreglo.push(
+            function() {
+                console.log(i);
+            }
+        )
+    }
+
+    return arreglo;
+
+}
+
+var arr = crearFunction();
+
+arr[0]();       
+arr[1]();       
+arr[2]();
+~~~
+
+>la respuesta va salir 3 para todos los de ahí arriba como resultado.
+
+>porque 3?...bueno porque lo que hace es lo sgte la función:
+
+>va guardando en el arreglo una función y dentro de esa función tiene el console.log(i)
+
+   [(){console.log(i)}, (){console.log(i)}, (){console.log(i)}]
+
+Es 3 simplemente porque el arreglo se lo llama afuera del lexical del for entonces no podremos usar la variable (i) según el for sino según el último valor como quedo (i) que sería 3 porque aunque (i) aumento a 3 y no entro en for la variable (i) se quedo en 3 nomas.
+
+~~~
+
+var crearFunction = function () {
+    var arreglo = [];
+    for (let i = 0; i < 3; i++ ) {
+        arreglo.push(
+            (function (j) {
+                return function () {
+                    console.log(j);
+                };
+            })
+        );
+    }
+    return arreglo;
+}
+
+var arr = crearFunction();
+
+arr[0]();
+arr[1]();
+arr[2]();
+
+*/
+~~~
+
+
+## BIND (enlazar)
+
+Bind lo que hace es que nos ayuda a donde debemos de apuntar el this en que función o donde queremos que se vea para usarlo, y también para dar valor a los parámetros; bueno mirar el los ejemplos para entender mejor.
+
+> Bind acepta más parámetro, el primero siempre es el ( this ), los sgtes sirven para bindear parámetros de una función.
+
+> DATO IMPORTANTE: bind para invocarlo necesitan llamarlo primero. EJEMPLO:
+
+~~~
+var persona = {
+    nombre: 'Pedro',
+    apellido: 'Perez'
+}
+
+var logNombre = function() {
+    console.log(this.nombre);
+}
+
+var logNombrePersona = logNombre.bind(persona);
+
+logNombrePersona(); 	// imprime this.nombre de persona osea: 'Pedro'
+~~~
+
+~~~
+function multiplica (a,b) {
+    return a * b;
+}
+
+var multiplicaPorDos = multiplica.bind(this, 2);
+
+ multiplicaPorDos() // coerción de datos tenemos 2 * b ya que b aún no se le ha pasado un valor asi que nos va dar Nan
+~~~
+
+~~~
+ function saludar(saludo, nombre) {
+    console.log(saludo + ' ' + nombre );
+ }
+
+ saludar('hola', 'Pablo'); // hola Pablo
+
+ var saludarEnChino = saludar.bind(this, 'nihao');
+
+ saludarEnChino('Emanuel'); // nihao Emanuel
+
+ var saludarEnAleman = saludar.bind(this, 'guten tag', 'Luisa');
+
+ saludarEnAleman(); // guten tag Luisa
+~~~
+
+~~~
+ var gentecito = { nombre: 'Pablo' };
+
+ function saludar2(saludo) {
+    console.log(saludo + ' ' + this.nombre );
+ }
+
+ var saludarPabloEnItaliano = saludar2(gentecito, 'Buongiorno');
+
+ saludarPabloEnItaliano();  // Buongiorno Pablo
+
+ // el porque de  que salga eso fácil apunta el this en gentecito, y el Buongiorno es el argumento del parámetro de la función.
+~~~
+
+
