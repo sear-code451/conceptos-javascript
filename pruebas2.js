@@ -102,6 +102,7 @@ List.prototype.remove = function() {
 let nuevo = new List();
 
 nuevo.add('Pablo');
+console.log(nuevo)
 nuevo.add('Martin');
 nuevo.remove();
 

@@ -196,8 +196,6 @@ console.log(nuevoArray);
 
 
 
-
-
 function Node(data) {
   this.data = data;
   this.next = null;
@@ -245,3 +243,90 @@ console.log(nuevaLista);
 nuevaLista.add('Maria');
 
 console.log(nuevaLista);
+
+
+
+
+
+
+
+/*
+Implementar la clase LinkedList, definiendo los siguientes métodos:
+  - add: agrega un nuevo nodo al final de la lista;
+  - remove: elimina el último nodo de la lista y retorna su valor (tener en cuenta el caso particular de una lista de un solo nodo y de una lista vacía);
+  - search: recibe un parámetro y lo busca dentro de la lista, con una particularidad: el parámetro puede ser un valor o un callback. En el primer caso, buscamos un nodo cuyo valor coincida con lo buscado; en el segundo, buscamos un nodo cuyo valor, al ser pasado como parámetro del callback, retorne true. 
+  Ejemplo: 
+  search(3) busca un nodo cuyo valor sea 3;
+  search(isEven), donde isEven es una función que retorna true cuando recibe por parámetro un número par, busca un nodo cuyo valor sea un número par.
+  En caso de que la búsqueda no arroje resultados, search debe retornar null.
+*/
+
+function Nodos(value) {
+  this.value = value;
+  this.next = null
+}
+
+
+function LinkedList() {
+  this._length = 0;
+  this.head = null;
+}
+
+
+LinkedList.prototype.add = function (data) {
+  let node = new Nodos(data);
+  let current = this.head;
+
+  if( !current ) {
+    this._length++;
+    this.head = node;
+    return node;
+  }
+
+  while( current.next !== null ) current = current.next;
+
+  this._length++;
+  current.next = node;
+  return node;
+}
+
+LinkedList.prototype.remove = function() {
+  let current = this.head;
+
+  if( !current ) throw TypeError( 'le faltan nodos men prende el foco' );
+  if( this._length === 1 ) {
+    let deleted = this.head;
+    this.head = null
+    this._length--;
+    return deleted
+  }
+
+  while( current.next.next ) current = current.next;
+
+  let removed = current.next;
+  current.next = null;
+  this._length--;
+  return removed;
+}
+
+
+
+
+
+
+let nuevaLista2 = new LinkedList();
+
+console.log(nuevaLista2.add('pablo'));
+
+nuevaLista2;
+
+console.log(nuevaLista2.add('rueda'));
+
+nuevaLista2;
+
+console.log( nuevaLista2.remove() );
+
+nuevaLista2
+
+
+
