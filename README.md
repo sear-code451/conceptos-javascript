@@ -18,6 +18,8 @@
 11. **Ejercicios this**
 12. **Scope ( alcance )**
 
+# CLASE 2
+
 ## Syntax Parser:
   Es un tipo de interprete automático en javascript ejemplo:
 
@@ -377,6 +379,8 @@ b();
 console.log(global);
 ~~~
 
+# CLASE 3
+
 ## CLOSURE (clausura, pronunciación: clousheer)
 
 Es como la combinación de la función de una función y del ambiente léxico donde esa función fue declarada.
@@ -552,6 +556,8 @@ var logNombre = function(arg1, arg2) {
 logNombre.apply(persona, ['Hola', ', como estas?']);
 ~~~
 
+# CLASE 4
+
 
 ## Recursión
 
@@ -651,3 +657,411 @@ PROCESO DE COMO VAN SIENDO EJECUTADOS LOS CONTEXTO DE EJECUCION QUE ESTABAN EN L
     return (4) * factorialRec( 4 - 1 );
     return 4 * 6;   // 24
     24
+
+**Recursion EJERCICIOS:**
+
+~~~
+let nFibonacci = num => {
+  if( num === 0 ) return 0;
+  if( num === 1 ) return 1;
+  return nFibonacci(num - 1) + nFibonacci(num - 2);
+}
+
+
+let fibonacci2 = num => {
+  if( num < 2 ) return num;
+  return fibonacci2(num-1) + fibonacci2(num - 2);
+}
+
+
+let fibonacci = n => {
+  return n < 2 ? n : fibonacci(n-1) + fibonacci(n - 2);
+}
+~~~
+
+> Bueno para entender cuando se llama a la misma funcion es donde hace recursividad y en este la recursividad está siendo llamada 2 veces (
+    fibonacci( n - 1 )  and fibonacci( n - 2))
+
+> Es decir que en ambos se deben de hacer la pregunta según la funcion en el que estes. Si no entendiste mirar el video del enlace.
+
+> El primero es como que si no me da ni 0 y ni 1 entonces fallaría la recursividad. Es decir es incompleto.
+
+> El segundo con el tercero es completo lo que cambia es como estan siendo declaradas, ahorrando una linea de codigo con el tercero intentar aprender hacer con el tercero.
+
+
+- Para entender esto mirar el video del enlace: https://youtu.be/k6I_TOW6O2o
+
+
+## SET (poner, conjunto)
+
+Es lo mismo que el array sino que la diferencia es que con set hace que los valores ya repetidos que tengamos en nuestro arreglo no se colocarán:
+
+Ejemplo:
+
+~~~
+var arreglo = [1,2,3,4,4,5,5,1,2];
+
+var set1 = new Set(arreglo);
+
+console.log(arreglo);   //[1,2,3,4,4,5,5,1,2]
+
+console.log(set1);   // [1,2,3,4,5]
+~~~
+
+**PARA AÑADIR ALGÚN VALOR A NUESTRO ARREGLO:**
+
+~~~
+
+set1.add(15);
+
+console.log(set1);  // [1,2,3,4,5,15];
+~~~
+
+## CLASE
+
+Las clases son "funciones especiales", como las expresiones de funciones y declaraciones de funciones, la sintaxis de una clase tiene dos componentes: expresiones de clases y declaraciones de clases.
+
+> ENLACE: https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Classes
+
+**EJEMPLO:**
+
+~~~
+function Stack() {
+    this.arr = []
+}
+
+Stack.prototype.add = function(element) {
+    this.arr.push(element);
+}
+
+Stack.prototype.remove = function() {
+    this.arr.pop();
+}
+
+
+let nuevoStack = new Stack();
+
+nuevoStack.add('first');
+nuevoStack.add('second');
+
+console.log(nuevoStack.arr)
+~~~
+
+## Estructura de datos ( solo concepto )
+
+Cuando hablamos de estructura de datos nos referimos a como organizamos los datos cuando programamos. Básicamente, este tema trata de encontrar formas particulares de organizar datos de tal manera que puedan ser utilizados de manera eficiente.
+
+# CLASE 5
+
+## LISTAS ENLAZADAS
+
+Iterar sobre la lista: recorrer la lista viendo sus elementos o hasta que encontremos el elemento deseado.
+
+Insertar un nodo: la operación va cambiar según el lugar donde querramos insertar el nodo nuevo:
+
+- Al principio de la lista.
+- En el medio de la lista.
+- Al final de la lista.
+
+Sacar un nodo:
+
+- Del principio de la lista.
+- Del medio de la lista.
+
+**EJEMPLOS:**
+
+~~~
+function Node(data) {
+    this.data = data;
+    this.next = null;
+}
+
+function List() {
+    this._length = 0;
+    this.head = null;
+}
+
+estas son lass funciones que vamos aprender.
+~~~
+
+~~~
+function Nodo(data) {
+    this.data = data;
+    this.next = null;
+}
+
+let nuevoNodo = new Nodo('Valentina');
+
+console.log(nuevoNodo);
+~~~
+
+> Esta clase es como lo que dije de una vez que termine este se pasa al sgte pero acá lo vamos haciendo de forma manual como que no es recomando nos falta una función para que sea más práctico al hacerlo.
+
+~~~
+function Node(data) {
+    this.data = data;
+    this.next = null;
+}
+
+
+function List() {
+    this._length = 0;
+    this.head = null;
+}
+
+
+List.prototype.add = function( data ) {
+    var node = new Node(data);
+    let current = this.head;
+
+    if(!current) {
+        this.head = node;
+        this._length++
+        return node;
+    }
+
+    while( current.next !== null ) {
+        current = current.next
+    }
+
+    current.next = node;
+    this._length++;
+    return node;
+}
+
+
+
+let nuevaLista = new List();
+console.log(nuevaLista);
+
+nuevaLista.add('Valentina');
+
+console.log(nuevaLista);
+
+nuevaLista.add('Pablo');
+
+console.log(nuevaLista);
+
+nuevaLista.add('Maria');
+
+console.log(nuevaLista);
+~~~
+
+~~~
+List.prototype.getAll = function() {
+    current = this.head;
+    if( !current ) {
+        console.log('la lista está vacía');
+    }
+
+    while(current) {
+        console.log(current.data);
+        current = current.next;
+    }
+}
+~~~
+
+**EJERCICIO COMPLEJO DE EJEMPLO:**
+
+function LinkedList() {
+    this._length = 0;
+    this.head = null;
+}
+
+
+function Node(value) {
+    this.value = value;
+    this.next = null;
+}
+
+
+LinkedList.prototype.add = function(value) {
+    let node = new Node(value);
+    let current = this.head;
+
+    if( !current ) {
+        this.head = node;
+        this._length++;
+        return node
+    }
+
+    while( current.next !== null ) {
+        current = current.next;
+    }
+
+    current.next = node;
+    this._length++;
+}
+
+LinkedList.prototype.remove = function() {
+    let current = this.head;
+
+    if( this.head === null ) return null
+
+    else if( this._length === 1 ) {
+        let deleted = current.value;
+        this.head = null;
+        this._length --;
+        return deleted;
+    }
+
+    while(current.next.next) {
+        current = current.next;
+    }
+
+    let removed = current.next.value;
+    current.next = null;
+    this._length --;
+    return removed;
+}
+
+LinkedList.prototype.search = function(param) {
+    if( this.head === null ) return null
+
+    let current = this.head;
+
+    while(current) {
+
+        if (current.value === param) return current.value
+
+        else if (typeof param === 'function') {
+            if( param(current.value) === true ) return current.value
+        }
+
+        current = current.next;
+
+    }
+
+    return null;
+
+}
+
+let nuevo = new LinkedList();
+
+
+function cb() {
+    return 'valentina';
+}
+
+
+nuevo.add('valentina');
+nuevo.add('martin');
+nuevo.remove();
+nuevo.search(cb);
+
+
+console.log(nuevo);
+
+**OTRO EJERCICIO UN POCO MAS COMPLEJO QUE EL ANTERIOR:**
+
+~~~
+function HasTable() {
+    this.numBuckets = 35;
+    this.buckets = [];
+}
+
+
+HasTable.prototype.hash = function(key) {
+    let suma = 0;
+    for( let i = 0; i < key._length; i++ ){
+        suma += key.charCodeAt(i);
+    }
+
+    return suma % this.numbuckets;
+}
+
+
+HasTable.prototype.set = function ( key, value ) {
+    if( typeof key !== 'string' ) {
+        throw TypeError('Keys must be string');
+    }
+
+    let index = this.hash(key);
+
+    if( !this.buckets[index] ) {    // this.buckets[index] === undefined
+        this.buckets[index] = {}
+    }
+
+    this.buckets[index][key] = value;
+
+}
+
+
+HasTable.prototype.get = function(key) {
+    let index = this.hash(key);
+    return this.buckets[index][key];
+}
+
+
+HasTable.prototype.hasky = function(ley) {
+    let index = this.hash(key);
+
+    return this.buckets[index].hasOwnProperty(key)
+
+}
+~~~
+
+# CLASE 6
+
+**IMPORTANTE: intentar colocar las imagenes QUE FALTAN o aunque sea una dirección de como verlo... aprender eso de marck down**
+
+
+##  ARBOLES ( Trees )
+
+Bueno es una estructura nueva que ha sido creado.
+
+A los útimos nodos que no tienen ninguna conexión se le llaman nodos ( hojas ), es  decir, que son las hojas del arbol.
+
+
+## ARBOLES BINARIOS 
+
+Los arboles binarios solo pueden subdividirse en 2 máximo si se dividen en más de 2 no son binarios.
+
+Su orden a la hora de dividirse es como sea, puede tener un menor en la izquierda o un mayor.
+
+Otro dato es que si cada uno de los nodos tienen 2 hijos, osea se dividen en 2 cada nodo se llama que es un árbol completo.
+
+**ARBOLES BINARIOS DE BUSQUEDA ( binary search tree )**
+
+Es lo mismo que el otro si no que la diferencia es que tiene un orden a la hora de dividirse, n se si siempre será los menores a la izquierda y mayores a la derecha no es 100% seguro esto, pero o es eso, o tambien viceversa y ya.
+
+
+## CLASE 7 
+
+**ALGORITMOS:** Un algoritmo es un conjunto prescrito de instrucciones o reglas bien definidas.
+
+Ordenadas y finita que permite realizar una actividad mediante pasos sucesivos, que no generen dudas a quien deba realizar dicha actividad, es decir, una serie de pasos a seguir para completar una tarea.
+
+1. Resuelva un problema
+
+2. Debe ser comprensible
+
+3. Hacerlo eficientemente
+
+**COMO MEDIMOS LA EFICIENCIA DE UN ALGORTIMO:**
+
+- Tiempo
+- Espacio
+- Otros recursos:
+    - Red
+    - Gráficos
+    - Hardware( Impresoras, Cpus, sensores, etc...)
+
+**EJEMPLOS:**
+
+~~~
+let max = array[0];
+for( var i = 0; i <= array.length; i++ ) {
+    if( array[i] > max ) {
+        max = array[i];
+    }
+}
+
+console.log(max);
+~~~
+
+
+
+
+
+
