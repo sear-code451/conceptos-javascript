@@ -272,6 +272,11 @@ function LinkedList() {
   this.head = null;
 }
 
+function cb(valor1) {
+  if( valor1 > 0 && (valor1 % 2) === 0 ) return true;
+}
+
+console.log(cb(2));
 
 LinkedList.prototype.add = function (data) {
   let node = new Nodos(data);
@@ -309,24 +314,113 @@ LinkedList.prototype.remove = function() {
   return removed;
 }
 
+LinkedList.prototype.search = function(param) {
+  if( this.head === null ) return null
 
+  let current = this.head;
 
+  while(current) {
 
+      if (current.value === param) return current.value
 
+      if( typeof param === 'function' ) return true;
+
+      current = current.next;
+
+  }
+
+  return null;
+
+}
+
+let nuevo = new LinkedList();
 
 let nuevaLista2 = new LinkedList();
 
-console.log(nuevaLista2.add('pablo'));
-
+console.log(nuevaLista2.add('Pablo'));
 nuevaLista2;
-
 console.log(nuevaLista2.add('rueda'));
-
 nuevaLista2;
-
 console.log( nuevaLista2.remove() );
-
 nuevaLista2
+console.log(nuevaLista2.search('Pablo'));
+console.log( nuevaLista2.search( cb ) )
+nuevaLista2
+
+
+
+
+
+
+/*
+Implementar la clase HashTable.
+
+Nuetra tabla hash, internamente, consta de un arreglo de buckets (slots, contenedores, o casilleros; es decir, posiciones posibles para almacenar la información), donde guardaremos datos en formato clave-valor (por ejemplo, {instructora: 'Ani'}).
+Para este ejercicio, la tabla debe tener 35 buckets (numBuckets = 35). (Luego de haber pasado todos los tests, a modo de ejercicio adicional, pueden modificar un poco la clase para que reciba la cantidad de buckets por parámetro al momento de ser instanciada.)
+
+La clase debe tener los siguientes métodos:
+  - hash: función hasheadora que determina en qué bucket se almacenará un dato. Recibe un input alfabético, suma el código numérico de cada caracter del input (investigar el método charCodeAt de los strings) y calcula el módulo de ese número total por la cantidad de buckets; de esta manera determina la posición de la tabla en la que se almacenará el dato.
+  - set: recibe el conjunto clave valor (como dos parámetros distintos), hashea la clave invocando al método hash, y almacena todo el conjunto en el bucket correcto.
+  - get: recibe una clave por parámetro, y busca el valor que le corresponde en el bucket correcto de la tabla.
+  - hasKey: recibe una clave por parámetro y consulta si ya hay algo almacenado en la tabla con esa clave (retorna un booleano).
+
+Ejemplo: supongamos que quiero guardar {instructora: 'Ani'} en la tabla. Primero puedo chequear, con hasKey, si ya hay algo en la tabla con el nombre 'instructora'; luego, invocando set('instructora', 'Ani'), se almacenará el par clave-valor en un bucket específico (determinado al hashear la clave)
+*/
+
+function HasTable() {
+  this.numBuckets = 35;
+  this.buckets = [];
+}
+
+
+HasTable.prototype.hash = function(key) {
+  let suma = 0;
+  for( let i = 0; i < key.length; i++ ){
+    console.log( key.charCodeAt(i) )
+      suma += key.charCodeAt(i);
+  }
+
+  console.log(suma )
+  return suma % this.numBuckets;
+}
+
+
+HasTable.prototype.set = function ( key, value ) {
+  if( typeof key !== 'string' ) {
+      throw TypeError('Keys must be string');
+  }
+
+  let index = this.hash(key);
+
+  if( !this.buckets[index] ) {    // this.buckets[index] === undefined
+      this.buckets[index] = {}
+  }
+
+  this.buckets[index][key] = value;
+
+}
+
+
+HasTable.prototype.get = function(key) {
+  let index = this.hash(key);
+  return this.buckets[index][key];
+}
+
+
+HasTable.prototype.hasky = function(ley) {
+  let index = this.hash(key);
+
+  return this.buckets[index].hasOwnProperty(key)
+
+}
+
+let nuevoHasTable = new HasTable();
+
+
+
+console.log( nuevoHasTable.hash( 'pablo' ) ); 
+console.log( nuevoHasTable);
+
 
 
 

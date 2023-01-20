@@ -7,7 +7,7 @@ Ordenadas y finitas que permite realizar una actividad mediante pasos sucesivos 
 
 2. Debe ser comprensible
 
-3. Hacaerlo eficientemente
+3. Hacerlo eficientemente
 
 COMO MEDIMOS LA EFICIENCIA DE UN ALGORTIMO:
 

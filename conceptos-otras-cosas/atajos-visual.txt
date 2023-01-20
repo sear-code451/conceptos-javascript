@@ -4,3 +4,4 @@
 Ctrl + Alt direccion = esto nos va dar multicursores para las lineas que demos con la dirección.
 Ctrl + shift + L = se podría decir que es una mezcla de lo de arriba con (ctrl + d).
 Ctrl + E = lista de busqueda de todos los archivos que tenemos.
+CTRL + º = esto nos va dividar y en el archivo que estemos actualmente lo manda a la otra parte en la que se divide.

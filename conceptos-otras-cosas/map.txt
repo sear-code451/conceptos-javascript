@@ -15,3 +15,7 @@ const dobles = numeros.map(function(numero){
 
 console.log(numeros);
 console.log(dobles);
+
+Enlace: 
+
+https://www.freecodecamp.org/espanol/news/javascript-map-como-utilizar-la-funcion-js-map-metodo-de-arreglo/
