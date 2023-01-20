@@ -784,6 +784,8 @@ function List() {
 estas son lass funciones que vamos aprender.
 ~~~
 
+
+
 ~~~
 function Nodo(data) {
     this.data = data;
@@ -796,6 +798,7 @@ console.log(nuevoNodo);
 ~~~
 
 > Esta clase es como lo que dije de una vez que termine este se pasa al sgte pero acá lo vamos haciendo de forma manual como que no es recomando nos falta una función para que sea más práctico al hacerlo.
+
 
 ~~~
 function Node(data) {
@@ -847,6 +850,8 @@ nuevaLista.add('Maria');
 console.log(nuevaLista);
 ~~~
 
+
+
 ~~~
 List.prototype.getAll = function() {
     current = this.head;
@@ -863,6 +868,7 @@ List.prototype.getAll = function() {
 
 **EJERCICIO COMPLEJO DE EJEMPLO:**
 
+~~~
 function LinkedList() {
     this._length = 0;
     this.head = null;
@@ -951,6 +957,7 @@ nuevo.search(cb);
 
 
 console.log(nuevo);
+~~~
 
 **OTRO EJERCICIO UN POCO MAS COMPLEJO QUE EL ANTERIOR:**
 
