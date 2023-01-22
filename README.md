@@ -1,5 +1,7 @@
 # TUTORIAL SOBRE Javascript
 
+[**Enlace a tutorial avanzado a mark down**](https://github.com/ricval/Documentacion/blob/master/Guias/GitHub/mastering-markdown.md#introducci%C3%B3n)
+
 ## CLASES M1
 
 **CLASE-2:** Entrará la siguiente lista de conocimientos:
