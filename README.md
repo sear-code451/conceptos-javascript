@@ -1,6 +1,6 @@
 # TUTORIAL SOBRE Javascript
 
-[**Enlace a tutorial avanzado a mark down**](https://github.com/ricval/Documentacion/blob/master/Guias/GitHub/mastering-markdown.md#introducci%C3%B3n)
+[**Enlace a tutorial avanzado a mark down**](https://github.com/ricval/Documentacion/blob/master/Guias/GitHub/mastering-markdown.md#introducci%C3%B3n)ñ
 
 ## CLASES M1
 
@@ -22,7 +22,7 @@
 
 # CLASE 2
 
-## Syntax Parser:
+## [Syntax Parser:](/README-clase2/1-sintax-parser.md)
   Es un tipo de interprete automático en javascript ejemplo:
 
 ~~~
