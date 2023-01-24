@@ -1,5 +1,0 @@
-            ARBOLES (trees)
-
-Bueno es una estructura nueva que ha sido creado.
-
-A los últimos nodos que no tienen ninguna conexión se le llaman nodos hojas es por decir son las hojas del árbol.
